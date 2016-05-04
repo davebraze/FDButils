@@ -2,7 +2,7 @@
 % Please edit documentation in R/nobs.R
 \name{nobs}
 \alias{nobs}
-\title{Number of non-missing values in vector.}
+\title{Number Of Non-missing Values In Vector.}
 \usage{
 nobs(v)
 }

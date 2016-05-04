@@ -2,7 +2,7 @@
 % Please edit documentation in R/invLogit.R
 \name{invLogit}
 \alias{invLogit}
-\title{Logits to probabilities.}
+\title{Logits To Probabilities.}
 \usage{
 invLogit(x)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/isOdd.R
 \name{isEven}
 \alias{isEven}
-\title{Are elements of x even numbers?}
+\title{Are Elements Of x Even Numbers?}
 \usage{
 isEven(n)
 }

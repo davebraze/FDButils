@@ -2,7 +2,7 @@
 % Please edit documentation in R/invBoxCox.R
 \name{invBoxCox}
 \alias{invBoxCox}
-\title{Inverse Box-Cox transformation.}
+\title{Inverse Box-Cox Transformation.}
 \usage{
 invBoxCox(x, lambda)
 }

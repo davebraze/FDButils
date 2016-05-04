@@ -3,7 +3,7 @@
 \name{invDnorm}
 \alias{invDnorm}
 \alias{inv_dnorm}
-\title{Positive inverse of the normal density function.}
+\title{Positive Inverse Of The Normal Density Function.}
 \usage{
 invDnorm(x)
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/series.R
 \name{series}
 \alias{series}
-\title{Find regular sequences of integers in numeric vector.}
+\title{Find Regular Sequences Of Integers In Numeric Vector.}
 \usage{
 series(v, step = 1, minseries = 2)
 }

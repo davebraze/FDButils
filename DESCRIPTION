@@ -11,7 +11,7 @@ Depends:
 License: MIT + file LICENSE
 LazyData: true
 Collate:
-    'FDButils-package.R'
+    'FDButils.R'
     'compCorr.R'
     'factors.R'
     'invBoxCox.R'

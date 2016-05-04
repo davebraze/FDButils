@@ -3,7 +3,7 @@
 \name{isWholeNumber}
 \alias{is.wholenumber}
 \alias{isWholeNumber}
-\title{Can each element of x reasonably be interpreted as a whole number?}
+\title{Can Each Element Of x Reasonably Be Interpreted As A Whole Number?}
 \usage{
 isWholeNumber(v, tol = .Machine$double.eps^0.5)
 

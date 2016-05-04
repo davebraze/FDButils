@@ -3,7 +3,7 @@
 \name{isNumeral}
 \alias{is.numeral}
 \alias{isNumeral}
-\title{Can character vector be coerced to numeric?}
+\title{Can Character Vector Be Coerced To Numeric?}
 \usage{
 isNumeral(c)
 

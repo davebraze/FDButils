@@ -2,7 +2,7 @@
 % Please edit documentation in R/factors.R
 \name{fact2char}
 \alias{fact2char}
-\title{Coerce a vector of class "factor" to character}
+\title{Coerce Factor Vector to Character Preserving Labels.}
 \usage{
 fact2char(f)
 }
