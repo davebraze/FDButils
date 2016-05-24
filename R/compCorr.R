@@ -19,6 +19,7 @@
 ##' @param r2 r for correlation 2.
 ##' @return list containing diff(Z1, Z2) and pval for difference.
 ##' @author Dave Braze \email{davebraze@@gmail.com}
+##' @import stats
 ##' @export
 compCorr <- function(n1, r1, n2, r2){
     ## Fisher Z-transforms
@@ -27,7 +28,7 @@ compCorr <- function(n1, r1, n2, r2){
     ## difference
     dz <- (zf1 - zf2)/sqrt(1/(n1 - 3) + (1/(n2 - 3)))
     ## p-value
-    pv <- 2*(1 - pnorm(abs(dz)))
+    pv <- 2*(1 - stats::pnorm(abs(dz)))
     retval <- list(diff=dz, pval=pv)
     retval
 }

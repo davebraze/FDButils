@@ -8,14 +8,20 @@
 ##'     return NA. When there is more than 1 mode, return the one whose value occurs first in x.
 ##'
 ##' @param x A vector or matrix.
+##' @param na.rm If TRUE, remove NAs from x, if FALSE (default) retain them.
 ##' @return A single value corresponding to the most common value in x.
 ##' @author David Braze \email{davebraze@@gmail.com}
+##' @import stats
 ##' @export
 ##' @examples
-##' x0 <- c(1:10, 3,3,2)
+##' x0 <- c(1:20, 50, replace=TRUE)
 ##' sampleMode(x0)
 ##'
-##' x1 <- sample(letters, 200)
+##' x1 <- sample(letters, 200, replace=TRUE)
+##' sampleMode(x1)
+##'
+##' x2 <- rnorm(100000, m=9.5)
+##' sampleMode(x2)
 sampleMode <- function(x, na.rm=FALSE) {
     if(na.rm){
         x <- x[!is.na(x)]
@@ -28,7 +34,7 @@ sampleMode <- function(x, na.rm=FALSE) {
         warn <- "WARNING: No value occurs more than once!"
         if(is.numeric(x)) {
             warn <- paste(warn, "Returning maximum density estimate for numeric x.")
-            d <- density(x)
+            d <- stats::density(x)
             mode <- d$x[which.max(d$y)]
         } else {
             warn <- paste(warn, "Returning NA.")

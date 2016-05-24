@@ -10,7 +10,8 @@
 ##' @seealso
 ##' \code{\link[stats]{plogis}}
 ##' \code{\link[base]{exp}} (for converting logits to odds-ratios)
+##' @import stats
 ##' @export
 invLogit <- function(x) {
-    plogis(x)
+    stats::plogis(x)
 }

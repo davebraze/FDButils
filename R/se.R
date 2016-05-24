@@ -13,13 +13,14 @@
 ##' @return Standard error of the mean for x, or each column of x.
 ##' @author David Braze \email{davebraze@@gmail.com}
 ##' @aliases se seM
+##' @import stats
 ##' @export
 se <-
     function(x, na.rm=FALSE) {
         if (is.matrix(x)) {
             apply(x, 2, se, na.rm = na.rm)
         } else if (is.vector(x)) {
-            sd(x, na.rm = na.rm)/sqrt(nobs(x))
+            stats::sd(x, na.rm = na.rm)/sqrt(nobs(x))
         } else if (is.data.frame(x)) {
             sapply(x, se, na.rm = na.rm)
         } else {
