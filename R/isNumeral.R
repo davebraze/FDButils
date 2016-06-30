@@ -21,7 +21,6 @@ isNumeral <- function(c) {
     retval
 }
 
-##' @title (deprecated)
 ##' @details \code{is.numeral()} is deprecated.
 ##' @rdname isNumeral
 ##' @export
