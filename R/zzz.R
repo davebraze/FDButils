@@ -13,7 +13,7 @@
     ## ver <- as.character(ver)
     ## packageStartupMessage(paste("Welcome to",  pkg, ", version ", ver, "."))
 
-    packageStartupMessage("    (c) 2016, Dave Braze and others.")
+    packageStartupMessage("    (c) 2014-2016, Dave Braze and others.")
     packageStartupMessage("    Released under the MIT license.\n")
 
     invisible()

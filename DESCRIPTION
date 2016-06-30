@@ -1,7 +1,7 @@
 Package: FDButils
 Title: Low Level Utility Functions
-Version: 0.0.2
-Date: 2016-05-24
+Version: 0.0.3
+Date: 2016-06-30
 Author: Dave Braze <davebraze@gmail.com>
 Maintainer: Dave Braze <davebraze@gmail.com>
 Description: Stable low level utility functions, mostly for use in other FDB
