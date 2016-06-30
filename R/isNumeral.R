@@ -1,6 +1,6 @@
 ##' @title Can Character Vector Be Coerced To Numeric?
 ##'
-##' @description None yet.
+##' @description Determines whether each element of a character vector can be coerced to numeric.
 ##'
 ##' @details
 ##' Checks element-wise as to whether each item in a vector of strings can be coerced to numeric.
@@ -21,6 +21,7 @@ isNumeral <- function(c) {
     retval
 }
 
+##' @title (deprecated)
 ##' @details \code{is.numeral()} is deprecated.
 ##' @rdname isNumeral
 ##' @export
@@ -28,5 +29,3 @@ is.numeral <- function(c) {
     warning("is.numeral() is deprecated. Use isNumeral() instead.")
     isNumeral(c)
 }
-
-

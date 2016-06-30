@@ -24,10 +24,14 @@ Returns the mode (most common value) of a vector or matrix or, for numerix x wit
     return NA. When there is more than 1 mode, return the one whose value occurs first in x.
 }
 \examples{
-x0 <- c(1:10, 3,3,2)
+x0 <- c(1:20, 50, replace=TRUE)
 sampleMode(x0)
 
 x1 <- sample(letters, 200, replace=TRUE)
+sampleMode(x1)
+
+x2 <- rnorm(100000, m=9.5)
+sampleMode(x2)
 }
 \author{
 David Braze \email{davebraze@gmail.com}

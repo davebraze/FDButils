@@ -16,7 +16,7 @@ is.numeral(c)
 A vector of logicals, NA where \code{is.na(c)}.
 }
 \description{
-None yet.
+Determines whether each element of a character vector can be coerced to numeric.
 }
 \details{
 Checks element-wise as to whether each item in a vector of strings can be coerced to numeric.

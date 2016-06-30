@@ -1,4 +1,4 @@
-##' @title Can Each Element Of x Reasonably Be Interpreted As A Whole Number?
+##' @title Can Elements Of x Be Interpreted As Whole Numbers?
 ##'
 ##' @description Determine whether each element of numerical vector can reasonably be interpreted as a
 ##'     whole number.
