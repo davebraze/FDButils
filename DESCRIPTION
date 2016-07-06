@@ -25,4 +25,5 @@ Collate:
     'se.R'
     'seP.R'
     'series.R'
+    'zzz.R'
 RoxygenNote: 5.0.1
