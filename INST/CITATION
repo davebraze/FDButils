@@ -5,5 +5,5 @@ citEntry(entry = "Manual",
          author = personList(as.person("David Braze")),
          institution = "Haskins Laboratories",
          year = sub("-.*", "", meta$Date),
-         url = "https://github.com/davebraze/FDBeye",
+         url = "https://github.com/davebraze/FDButils",
          textVersion = "")
