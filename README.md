@@ -1,6 +1,6 @@
 FDButils
 ====
-Utility functions for use in other FDB packages. This code is should be pretty stable.
+Utility functions for use in other FDB packages. This code should be pretty stable.
 
 Install with devtools::install\_github():
 
