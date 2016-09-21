@@ -1,7 +1,7 @@
 Package: FDButils
 Title: Low Level Utility Functions
-Version: 0.0.3
-Date: 2016-06-30
+Version: 0.0.4
+Date: 2016-09-21
 Author: Dave Braze <davebraze@gmail.com>
 Maintainer: Dave Braze <davebraze@gmail.com>
 Description: Stable low level utility functions, mostly for use in other FDB
@@ -24,6 +24,7 @@ Collate:
     'isWholeNumber.R'
     'nobs.R'
     'sampleMode.R'
+    'sciNot.R'
     'se.R'
     'seP.R'
     'series.R'
