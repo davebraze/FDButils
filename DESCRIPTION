@@ -1,7 +1,7 @@
 Package: FDButils
 Title: Low Level Utility Functions
-Version: 0.0.4
-Date: 2016-09-21
+Version: 0.0.5
+Date: 2016-10-04
 Author: Dave Braze <davebraze@gmail.com>
 Maintainer: Dave Braze <davebraze@gmail.com>
 Description: Stable low level utility functions, mostly for use in other FDB
@@ -16,6 +16,7 @@ Collate:
     'FDButils.R'
     'compCorr.R'
     'factors.R'
+    'gcd.R'
     'invBoxCox.R'
     'invDnorm.R'
     'invLogit.R'
