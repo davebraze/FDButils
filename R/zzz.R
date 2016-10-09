@@ -8,10 +8,13 @@
 
     packageStartupMessage("    Welcome to ", pkg, ".")
 
-    ## Better to build the startupMessage by reading the Description file, as in:
+    ## Better to build the startupMessage by reading the Description file, like this:
     ## ver <- read.dcf(file.path(lib, pkg, "DESCRIPTION"), "Version")
     ## ver <- as.character(ver)
     ## packageStartupMessage(paste("Welcome to",  pkg, ", version ", ver, "."))
+    ## or this:
+    ## title = paste(meta$Package, meta$Title, sep=": "),
+    ## note = paste("R package version", packageVersion("FDButils")),
 
     packageStartupMessage("    (c) 2014-2016, Dave Braze and others.")
     packageStartupMessage("    Released under the MIT license.\n")
