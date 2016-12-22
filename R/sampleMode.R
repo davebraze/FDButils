@@ -14,10 +14,10 @@
 ##' @import stats
 ##' @export
 ##' @examples
-##' x0 <- c(1:20, 50, replace=TRUE)
+##' x0 <- sample(1:26, 5000, replace=TRUE)
 ##' sampleMode(x0)
 ##'
-##' x1 <- sample(letters, 200, replace=TRUE)
+##' x1 <- sample(letters, 5000, replace=TRUE)
 ##' sampleMode(x1)
 ##'
 ##' x2 <- rnorm(100000, m=9.5)
