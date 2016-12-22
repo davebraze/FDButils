@@ -6,12 +6,12 @@
 # Use .onAttach for informative messages.
 .onAttach <- function(lib, pkg) {
 
-    packageStartupMessage("    Welcome to ", pkg, ".")
+    ## packageStartupMessage("    Welcome to ", pkg, ".")
 
     ## Better to build the startupMessage by reading the Description file, like this:
-    ## ver <- read.dcf(file.path(lib, pkg, "DESCRIPTION"), "Version")
-    ## ver <- as.character(ver)
-    ## packageStartupMessage(paste("Welcome to",  pkg, ", version ", ver, "."))
+    ver <- read.dcf(file.path(lib, pkg, "DESCRIPTION"), "Version")
+    ver <- as.character(ver)
+    packageStartupMessage(paste0("Welcome to ",  pkg, ", version ", ver, "."))
     ## or this:
     ## title = paste(meta$Package, meta$Title, sep=": "),
     ## note = paste("R package version", packageVersion("FDButils")),
