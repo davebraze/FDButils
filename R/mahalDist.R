@@ -50,9 +50,11 @@
 ##' @seealso \code{\link[stats]{cov}}
 ##' @seealso \code{\link[stats]{solve}}
 ##' @examples
-##' m <- matrix(runif(80), nrow=10)
-##' md <- mahalDist(m)
-##'
+##' m <- matrix(rnorm(400, m=.8, s=.05), nrow=100)
+##' md <- mahalDistC(m)
+##' md$D2
+##' hist(md$D2)
+##' rug(md$D2)
 ##'
 ##' @export
 mahalDistC <- function(m,
@@ -76,15 +78,6 @@ mahalDistC <- function(m,
     retval
 }
 
-if (FALSE){
-    m <- matrix(rnorm(400, m=.8, s=.05), nrow=100)
-    md <- mahalDistC(m)
-    md$D2
-    hist(md$D2)
-    rug(md$D2)
-
-}
-
 ##' @title Get pairwise squared Mahalanobis distances.
 ##'
 ##' @description For N points, in M dimensions, get pairwise squared
@@ -92,8 +85,15 @@ if (FALSE){
 ##'     distances.
 ##'
 ##' @details For each pair of N points in M dimensions, get pairwise
-##'     squared Mahalanobis distances between points. Returns a square
-##'     symmetric matrix of squared Mahalanobis distances.
+##'     squared Mahalanobis distances between points. Returns an
+##'     object, \code{d}, of class "dist" (see
+##'     \code{\link[stats]{dist}}) containing pairwise squared
+##'     Mahalanobis distances for all points in m. The method
+##'     attribute of \code{d} is set to "mahalanobis". Obviously,
+##'     \code{d} can get big for large N.
+##'
+##'     The full symmetric distance matrix for d can be recovered by
+##'     calling \code{as.matrix(d)}.
 ##'
 ##'     This function is a convenience wrapper around
 ##'     \code{\link[stats]{mahalanobis}}, which see.
@@ -101,21 +101,31 @@ if (FALSE){
 ##' @param m A matrix with observations in rows.
 ##' @param covar The covariance matrix for m.
 ##' @param ... Not used.
-##' @return A symmetric square matrix containing pairwise squared
-##'     Mahalanobis distances for all points in m.
+##' @return An object of class "dist" (see \code{\link[stats]{dist}})
+##'     containing pairwise squared Mahalanobis distances for all
+##'     points in m.
 ##' @author Dave Braze \email{davebraze@@gmail.com}
 ##' @seealso \code{\link[stats]{mahalanobis}}
 ##' @seealso \code{\link[stats]{cov}}
 ##' @seealso \code{\link[stats]{solve}}
+##' @seealso \code{\link[stats]{dist}}
+##' @examples
+##' m <- matrix(rnorm(200, m=.8, s=.05), nrow=50)
+##' md <- mahalDistP(m)
+##' cluster <- hclust(dst)
+##' plot(cluster)
+##'
+##' @export
 mahalDistP <- function(m, covar = NULL, ...) {
     if(is.null(covar)) covar <- cov(m)
     rows <- 1:nrow(m)
     retval <- lapply(rows, function(row) {
-        mahalanobis(x = m,
+        stats::mahalanobis(x = m,
                     center = m[row, ],
                     cov = covar)
     })
-    do.call("rbind", retval)
+    retval <- do.call("rbind", retval)
+    retval <- dist(retval)
+    attr(retval, "method") <- "mahalanobis"
+    retval
 }
-
-
