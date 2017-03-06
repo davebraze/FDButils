@@ -1,5 +1,7 @@
-##' @title For N points, in M dimensions, get squared Mahalanobis distances
-##'     to centroid.
+##' @title Get squared Mahalanobis distances to centroid.
+##'
+##' @description For N points, in M dimensions, get squared Mahalanobis
+##'     distances to center.
 ##'
 ##' @details For each of N points in M dimensions, get squared Mahalanobis
 ##'     distances to distribution centroid. This is useful for checking for
@@ -75,9 +77,45 @@ mahalDistC <- function(m,
 }
 
 if (FALSE){
-    m <- matrix(rnorm(800), nrow=10)
-    md <- mahalDist(m)
+    m <- matrix(rnorm(400, m=.8, s=.05), nrow=100)
+    md <- mahalDistC(m)
+    md$D2
     hist(md$D2)
     rug(md$D2)
 
 }
+
+##' @title Get pairwise squared Mahalanobis distances.
+##'
+##' @description For N points, in M dimensions, get pairwise squared
+##'     Mahalanobis distances between points. Return a square matrix of
+##'     distances.
+##'
+##' @details For each pair of N points in M dimensions, get pairwise
+##'     squared Mahalanobis distances between points. Returns a square
+##'     symmetric matrix of squared Mahalanobis distances.
+##'
+##'     This function is a convenience wrapper around
+##'     \code{\link[stats]{mahalanobis}}, which see.
+##'
+##' @param m A matrix with observations in rows.
+##' @param covar The covariance matrix for m.
+##' @param ... Not used.
+##' @return A symmetric square matrix containing pairwise squared
+##'     Mahalanobis distances for all points in m.
+##' @author Dave Braze \email{davebraze@@gmail.com}
+##' @seealso \code{\link[stats]{mahalanobis}}
+##' @seealso \code{\link[stats]{cov}}
+##' @seealso \code{\link[stats]{solve}}
+mahalDistP <- function(m, covar = NULL, ...) {
+    if(is.null(covar)) covar <- cov(m)
+    rows <- 1:nrow(m)
+    retval <- lapply(rows, function(row) {
+        mahalanobis(x = m,
+                    center = m[row, ],
+                    cov = covar)
+    })
+    do.call("rbind", retval)
+}
+
+
