@@ -3,8 +3,8 @@ FDButils
 
 Utility functions for use in other FDB packages. Code in this package
 should make use only of functions in the dozen or so "base R"
-packages. Code in FDButils should be pretty stable, as other packages
-may depend on it.
+packages. It should also be pretty stable, as other packages may
+depend on it.
 
 Install with devtools::install\_github():
 
