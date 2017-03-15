@@ -23,7 +23,7 @@
 ##'     "mean" or "median"
 ##' @param ... additional arguments passed to
 ##'     \code{\link[stats]{mahalanobis}}, and possibly on to
-##'     \code{\link[stats]{solve}}.
+##'     \code{\link[base]{solve}}.
 ##' @return
 ##'     A list with additional class "mahalDist" containing elements:
 ##'
@@ -48,7 +48,7 @@
 ##' @author Dave Braze \email{davebraze@@gmail.com}
 ##' @seealso \code{\link[stats]{mahalanobis}}
 ##' @seealso \code{\link[stats]{cov}}
-##' @seealso \code{\link[stats]{solve}}
+##' @seealso \code{\link[base]{solve}}
 ##' @examples
 ##' m <- matrix(rnorm(400, m=.8, s=.05), nrow=100)
 ##' md <- mahalDistC(m)
@@ -107,12 +107,12 @@ mahalDistC <- function(m,
 ##' @author Dave Braze \email{davebraze@@gmail.com}
 ##' @seealso \code{\link[stats]{mahalanobis}}
 ##' @seealso \code{\link[stats]{cov}}
-##' @seealso \code{\link[stats]{solve}}
+##' @seealso \code{\link[base]{solve}}
 ##' @seealso \code{\link[stats]{dist}}
 ##' @examples
 ##' m <- matrix(rnorm(200, m=.8, s=.05), nrow=50)
 ##' md <- mahalDistP(m)
-##' cluster <- hclust(dst)
+##' cluster <- hclust(md)
 ##' plot(cluster)
 ##'
 ##' @export
