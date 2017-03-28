@@ -33,4 +33,3 @@ points(invDnorm(y), y, pch=3, col="blue")
 \author{
 Dave Braze \email{davebraze@gmail.com}
 }
-

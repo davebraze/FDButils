@@ -25,10 +25,9 @@ Takes a numeric vector, x, and returns a corresponding
 
     scales_x_log10(labels=sciNot)
 }
-\author{
-David Braze \email{davebraze@gmail.com}
-}
 \seealso{
 \code{\link[ggplot2]{scale_continuous}}
 }
-
+\author{
+David Braze \email{davebraze@gmail.com}
+}

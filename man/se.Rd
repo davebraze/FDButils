@@ -3,6 +3,7 @@
 \name{se}
 \alias{se}
 \alias{seM}
+\alias{seM}
 \title{Standard Error Of The Mean.}
 \usage{
 se(x, na.rm = FALSE)
@@ -28,4 +29,3 @@ a vector, a single value is returned.
 \author{
 David Braze \email{davebraze@gmail.com}
 }
-

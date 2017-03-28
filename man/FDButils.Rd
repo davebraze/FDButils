@@ -12,4 +12,3 @@ This package is a repository for stable low-level
     depend on anything beyond the R 'base' and 'recommended'
     packages.
 }
-

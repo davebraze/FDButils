@@ -21,11 +21,10 @@ associated with each element of f.
 
 cf. > unclass(f)
 }
-\author{
-Dave Braze \email{davebraze@gmail.com}
-}
 \seealso{
 \code{\link{fact2char}}
 \code{\link{as.numeric}}
 }
-
+\author{
+Dave Braze \email{davebraze@gmail.com}
+}

@@ -23,4 +23,3 @@ seP is applied column-wise and a vector of values is returned.
 \author{
 David Braze \email{davebraze@gmail.com}
 }
-

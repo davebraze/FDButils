@@ -21,4 +21,3 @@ Returns the number of non-missing values in vector v. A convenience wrapper arou
 \author{
 David Braze \email{davebraze@gmail.com}
 }
-

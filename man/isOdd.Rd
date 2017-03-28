@@ -22,4 +22,3 @@ Test whether elements of numeric vector are odd. For whole numbers return TRUE o
 \author{
 David Braze \email{davebraze@gmail.com}
 }
-

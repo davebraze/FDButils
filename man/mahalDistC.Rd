@@ -67,9 +67,6 @@ hist(md$D2)
 rug(md$D2)
 
 }
-\author{
-Dave Braze \email{davebraze@gmail.com}
-}
 \seealso{
 \code{\link[stats]{mahalanobis}}
 
@@ -77,4 +74,6 @@ Dave Braze \email{davebraze@gmail.com}
 
 \code{\link[base]{solve}}
 }
-
+\author{
+Dave Braze \email{davebraze@gmail.com}
+}

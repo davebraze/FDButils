@@ -21,11 +21,10 @@ with each element of f.
 
 cf. > unclass(f)
 }
-\author{
-Dave Braze \email{davebraze@gmail.com}
-}
 \seealso{
 \code{\link{fact2num}}
 \code{\link{as.character}}
 }
-
+\author{
+Dave Braze \email{davebraze@gmail.com}
+}

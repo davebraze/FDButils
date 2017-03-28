@@ -2,7 +2,7 @@ Package: FDButils
 Title: Low Level Utility Functions
 Version: 0.0.6
 Date: 2017-03-15
-Author: Dave Braze <davebraze@gmail.com>
+Authors@R: c(person("David", "Braze", email="davebraze@gmail.com", role=c("aut", "cre")))
 Maintainer: Dave Braze <davebraze@gmail.com>
 Description: Stable low level utility functions, mostly for use in other FDB
     packages.
@@ -31,4 +31,4 @@ Collate:
     'seP.R'
     'series.R'
     'zzz.R'
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

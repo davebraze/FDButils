@@ -35,4 +35,3 @@ Implemented in R by me.
 \author{
 Dave Braze \email{davebraze@gmail.com}
 }
-

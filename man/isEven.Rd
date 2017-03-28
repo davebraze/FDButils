@@ -29,4 +29,3 @@ isEven(m)
 \author{
 David Braze \email{davebraze@gmail.com}
 }
-

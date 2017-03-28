@@ -20,12 +20,11 @@ None yet.
 \details{
 Compute the inverse Box-Cox transformation of a variable. Requires arguments x and lambda.
 }
-\author{
-Dave Braze \email{davebraze@gmail.com}
-}
 \seealso{
 \code{\link[car]{bcPower}}
 
 \code{\link[car]{powerTransform}}
 }
-
+\author{
+Dave Braze \email{davebraze@gmail.com}
+}

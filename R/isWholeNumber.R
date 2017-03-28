@@ -9,7 +9,7 @@
 ##' @param v A numeric vector.
 ##' @param tol What counts as close enough to 0? Defaults to .Machine$double.eps^0.5.
 ##' @return A vector of Logicals.
-##' @author Cribbed from example in \code{\link[base]{integer}}
+##' @source Cribbed from example in \code{\link[base]{integer}}
 ##' @export
 isWholeNumber <- function(v, tol = .Machine$double.eps^0.5) {
     abs(v - round(v)) < tol

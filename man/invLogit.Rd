@@ -18,11 +18,10 @@ A wrapper around \code{\link[stats]{plogis}}.
 \details{
 Convert logit units to probabilities.
 }
-\author{
-Dave Braze \email{davebraze@gmail.com}
-}
 \seealso{
 \code{\link[stats]{plogis}}
 \code{\link[base]{exp}} (for converting logits to odds-ratios)
 }
-
+\author{
+Dave Braze \email{davebraze@gmail.com}
+}

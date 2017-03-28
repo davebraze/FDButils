@@ -36,4 +36,3 @@ sampleMode(x2)
 \author{
 David Braze \email{davebraze@gmail.com}
 }
-

@@ -45,9 +45,6 @@ cluster <- hclust(md)
 plot(cluster)
 
 }
-\author{
-Dave Braze \email{davebraze@gmail.com}
-}
 \seealso{
 \code{\link[stats]{mahalanobis}}
 
@@ -57,4 +54,6 @@ Dave Braze \email{davebraze@gmail.com}
 
 \code{\link[stats]{dist}}
 }
-
+\author{
+Dave Braze \email{davebraze@gmail.com}
+}

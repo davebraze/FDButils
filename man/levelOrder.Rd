@@ -22,12 +22,11 @@ Reorders the levels of factor f as specified in new.order, which must contain al
 only the existing levels of f (including unused levels), but in the desired order. If new.order
 and levels(f) do not contain exactly the same elements, then do nothing.
 }
-\author{
-Dave Braze \email{davebraze@gmail.com}
-}
 \seealso{
 \code{\link{factor}}
 \code{\link{levels}}
 \code{\link[stats]{relevel}}
 }
-
+\author{
+Dave Braze \email{davebraze@gmail.com}
+}

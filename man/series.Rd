@@ -35,4 +35,3 @@ beginning of series, (2) index pointing to beginning of series, (3) length of se
 \author{
 David Braze \email{davebraze@gmail.com}
 }
-
