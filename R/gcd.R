@@ -18,7 +18,7 @@ gcd0 <- function(a,b) {
     if (!(isWholeNumber(a) && isWholeNumber(b))) stop("gcd0() is defined over whole numbers only.")
     a <- abs(a); b <- abs(b)
     if (a>b) ss <- b
-    else ss <- a
+    else ss <-  a
     for (ii in 1:ss) {
         if((a %% ii == 0) && (b %% ii == 0)) retval <- ii
     }
