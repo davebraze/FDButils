@@ -4,7 +4,6 @@
 ^#.+#$
 *.bak
 .*
-!/.gitignore
 
 ## R/RStudio files
 .Rhistory
@@ -18,3 +17,8 @@ vignettes/*.pdf
 inst/doc
 README.html
 README.docx
+
+## config files that should be tracked
+!/.gitignore
+!/.travis.yml
+!/.Rbuildignore

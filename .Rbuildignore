@@ -1,0 +1,7 @@
+^README\.Rmd$
+^README-.*\.png$
+^c:\DATA\braze\R\development\FDButils-dev\FDButils\docs$
+^\.travis\.yml$
+^inst/web$
+^docs$
+^_pkgdown\.yml$
