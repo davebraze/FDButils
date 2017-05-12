@@ -15,6 +15,9 @@
 ##'     If method is stdev, then values more than \code{coef} standard
 ##'     deviations from the mean are flagged as possible outliers.
 ##'
+##'     Both methods are rather simple-minded ways of IDing possible outliers
+##'     in the context of of a univariate normal distribution.
+##'
 ##' @param x Numeric vector.
 ##' @param method Method for identifying outliers. Defaults to the
 ##'     "boxplot" method. Other possibility is "stdev".
@@ -30,13 +33,14 @@
 ##' @examples
 ##' set.seed(1234)
 ##' x <- rt(50, df=2)
-##' boxplot(x)
+##' bp <- boxplot(x)
 ##' x[outliers(x)]
-outliers <- function(x, method=c("boxplot", "stdev"), coef=NULL) {
+outliers <- function(x, method="boxplot", coef=NULL) {
     if (!method %in% c("boxplot", "stdev")){
         stop("Value of 'method' not recognized.")
     }
     if (method=="boxplot") {
+        ## not entirely consistent with graphics::boxplot()
         if (is.null(coef)) coef <- 1.5
         else coef = coef
         q <- quantile(x, c(.25,.75))
@@ -49,6 +53,7 @@ outliers <- function(x, method=c("boxplot", "stdev"), coef=NULL) {
         s <- sd(x, na.rm=TRUE)
         bounds <- c(m-s*coef, m+s*coef)
     }
+    print(bounds)
     ifelse(x<bounds[1] | x>bounds[2], TRUE, FALSE)
 }
 
