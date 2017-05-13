@@ -35,10 +35,8 @@
 ##' x <- rt(50, df=2)
 ##' bp <- boxplot(x)
 ##' x[outliers(x)]
-outliers <- function(x, method="boxplot", coef=NULL) {
-    if (!method %in% c("boxplot", "stdev")){
-        stop("Value of 'method' not recognized.")
-    }
+outliers <- function(x, method=c("boxplot", "stdev"), coef=NULL) {
+    method <- match.arg(method, c("boxplot", "stdev"))
     if (method=="boxplot") {
         ## not entirely consistent with graphics::boxplot()
         if (is.null(coef)) coef <- 1.5

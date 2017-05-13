@@ -60,10 +60,9 @@
 mahalDistC <- function(m,
                       scale=TRUE,
                       use="complete.obs",
-                      center="mean",
+                      center=c("mean", "median"),
                       ...) {
-    stopifnot(length(dim(m))==2,
-              (center=="mean"|center=="median"))
+    center <- match.arg(center, c("mean", "median"))
     m <- as.matrix(m)
     if (scale) m <- apply(m,2,scale)
     if ("mean"==center) c <- apply(m, 2, mean, na.rm=TRUE)

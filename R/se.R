@@ -12,7 +12,7 @@
 ##' @param na.rm Specify how to handle missing values.
 ##' @return Standard error of the mean for x, or each column of x.
 ##' @author David Braze \email{davebraze@@gmail.com}
-##' @aliases se seM
+##' @aliases se
 ##' @import stats
 ##' @export
 se <-
