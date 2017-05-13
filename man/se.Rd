@@ -3,7 +3,6 @@
 \name{se}
 \alias{se}
 \alias{seM}
-\alias{seM}
 \title{Standard Error Of The Mean.}
 \usage{
 se(x, na.rm = FALSE)

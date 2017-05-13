@@ -37,11 +37,14 @@ Takes a numeric vector, x, and returns a corresponding
 
     If method is stdev, then values more than \code{coef} standard
     deviations from the mean are flagged as possible outliers.
+
+    Both methods are rather simple-minded ways of IDing possible outliers
+    in the context of of a univariate normal distribution.
 }
 \examples{
 set.seed(1234)
 x <- rt(50, df=2)
-boxplot(x)
+bp <- boxplot(x)
 x[outliers(x)]
 }
 \seealso{
