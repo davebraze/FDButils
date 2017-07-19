@@ -4,10 +4,13 @@ Version: 0.0.7
 Date: 2017-04-29
 Authors@R: c(person("David", "Braze", email="davebraze@gmail.com", role=c("aut", "cre")))
 Maintainer: Dave Braze <davebraze@gmail.com>
+Maintainer: David Braze <davebraze@gmail.com>
 Description: Stable low level utility functions, mostly for use in other FDB
     packages.
 Depends:
     R (>= 3.2.3)
+Imports:
+    magic
 License: MIT + file LICENSE
 LazyData: true
 URL: https://github.com/davebraze/FDButils
@@ -23,6 +26,7 @@ Collate:
     'isNumeral.R'
     'isOdd.R'
     'isWholeNumber.R'
+    'latinList.R'
     'mahalDist.R'
     'nobs.R'
     'outliers.R'
