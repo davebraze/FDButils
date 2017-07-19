@@ -9,12 +9,14 @@ outliers(x, method = c("boxplot", "stdev"), coef = NULL)
 \arguments{
 \item{x}{Numeric vector.}
 
-\item{method}{Method for identifying outliers. Defaults to the
-"boxplot" method. Other possibility is "stdev".}
+\item{method}{Method for identifying outliers. Defaults to
+"boxplot". Other possibility is "stdev".}
 
 \item{coef}{Multiplier for determining how extreme a value must be
 to be flagged as a potential outlier. Defaults to 1.5 for
-boxplot method and 2 for stdev method.}
+boxplot method, indicating 1.5 times the inter-quartile range
+from the median, and to 2 for stdev method, indicating 2 times
+the standard deviation from the mean.}
 }
 \value{
 Logical vector the same length as x, indicating for each
@@ -30,16 +32,16 @@ Takes a numeric vector, x, and returns a corresponding
     vector indicate corresponding value in x may be an
     outlier. Handy for use with dplyr::mutate().
 
-    If method is boxplot, then values more than
-    \code{coef} times the IQR above the 3rd quartile, or more than
-    \code{coef} times the IQR below the 1st quartile are flagged
-    as possible outliers.
+    If method is boxplot, then values more than \code{coef} times
+    the IQR above the 3rd quartile, or more than \code{coef} times
+    the IQR below the 1st quartile are flagged as possible
+    outliers.
 
     If method is stdev, then values more than \code{coef} standard
     deviations from the mean are flagged as possible outliers.
 
     Both methods are rather simple-minded ways of IDing possible outliers
-    in the context of of a univariate normal distribution.
+    in the context of a presumed normal distribution.
 }
 \examples{
 set.seed(1234)
