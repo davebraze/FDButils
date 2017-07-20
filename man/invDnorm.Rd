@@ -20,7 +20,7 @@ Normal density function is not fully invertible. This function returns the posit
     inverse.
 }
 \details{
-Cribbed from <http://stackoverflow.com/questions/19589191/the-reverse-inverse-of-the-normal-distribution-function-in-r>
+Cribbed from \url{http://stackoverflow.com/questions/19589191/the-reverse-inverse-of-the-normal-distribution-function-in-r}.
 
 \code{inv_dnorm()} is deprecated.
 }

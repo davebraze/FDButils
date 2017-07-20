@@ -21,7 +21,7 @@ Determines whether each element of a character vector can be coerced to numeric.
 \details{
 Checks element-wise as to whether each item in a vector of strings can be coerced to numeric.
 
-Basics cribbed from \url{http://rosettacode.org/wiki/Determine_if_a_string_is_numeric#R}
+Basics cribbed from \url{http://rosettacode.org/wiki/Determine_if_a_string_is_numeric#R}.
 
 \code{is.numeral()} is deprecated.
 }

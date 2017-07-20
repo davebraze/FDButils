@@ -30,7 +30,7 @@ Identify potential outliers in a numeric vector.
 Takes a numeric vector, x, and returns a corresponding
     logical vector the same length as x. Values of TRUE in return
     vector indicate corresponding value in x may be an
-    outlier. Handy for use with dplyr::mutate().
+    outlier. Handy for use with \code{dplyr::mutate()}.
 
     If method is boxplot, then values more than \code{coef} times
     the IQR above the 3rd quartile, or more than \code{coef} times

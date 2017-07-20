@@ -16,7 +16,8 @@ integer, length of x minus the number of NAs in x.
 Count non-missing values in v.
 }
 \details{
-Returns the number of non-missing values in vector v. A convenience wrapper around sum(!is.na(v)).
+Returns the number of non-missing values in vector v. A convenience wrapper around
+    \code{sum(!is.na(v))}.
 }
 \author{
 David Braze \email{davebraze@gmail.com}

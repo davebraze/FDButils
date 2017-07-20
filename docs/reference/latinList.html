@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Number Of Non-missing Values In Vector. — nobs â€¢ FDButils</title>
+<title>Create Latin squares. — latinList â€¢ FDButils</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -73,34 +73,85 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Number Of Non-missing Values In Vector.</h1>
+    <h1>Create Latin squares.</h1>
     </div>
 
     
-    <p>Count non-missing values in v.</p>
+    <p>Get list of random latin squares.</p>
     
 
-    <pre><span class='fu'>nobs</span>(<span class='no'>v</span>)</pre>
+    <pre><span class='fu'>latinList</span>(<span class='kw'>nSquares</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>nDims</span> <span class='kw'>=</span> <span class='fl'>4</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>v</th>
-      <td><p>A vector.</p></td>
+      <th>nSquares</th>
+      <td><p>Number of latin squares to create.</p></td>
+    </tr>
+    <tr>
+      <th>nDims</th>
+      <td><p>Size of latin squares.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>integer, length of x minus the number of NAs in x.</p>
+    <p>A list of latin squares, nSquares in length. Each square is nDims x nDims in size.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Returns the number of non-missing values in vector v. A convenience wrapper around
-    <code>sum(!is.na(v))</code>.</p>
+    <p>Get list of random latin squares. At present, these are not guaranteed to be unique.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='http://www.rdocumentation.org/packages/magic/topics/latin'>latin</a></code></p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>d</span> <span class='kw'>&lt;-</span> <span class='fl'>5</span>
+<span class='no'>ll</span> <span class='kw'>&lt;-</span> <span class='fu'>latinList</span>(<span class='fl'>3</span>,<span class='no'>d</span>)
+<span class='no'>ll</span></div><div class='output co'>#&gt; [[1]]
+#&gt;      [,1] [,2] [,3] [,4] [,5]
+#&gt; [1,]    3    2    1    4    5
+#&gt; [2,]    5    1    2    3    4
+#&gt; [3,]    4    5    3    1    2
+#&gt; [4,]    1    4    5    2    3
+#&gt; [5,]    2    3    4    5    1
+#&gt; 
+#&gt; [[2]]
+#&gt;      [,1] [,2] [,3] [,4] [,5]
+#&gt; [1,]    1    2    5    3    4
+#&gt; [2,]    3    1    2    4    5
+#&gt; [3,]    4    5    1    2    3
+#&gt; [4,]    5    4    3    1    2
+#&gt; [5,]    2    3    4    5    1
+#&gt; 
+#&gt; [[3]]
+#&gt;      [,1] [,2] [,3] [,4] [,5]
+#&gt; [1,]    3    4    2    1    5
+#&gt; [2,]    1    2    3    5    4
+#&gt; [3,]    2    5    1    4    3
+#&gt; [4,]    4    1    5    3    2
+#&gt; [5,]    5    3    4    2    1
+#&gt; </div><div class='input'><span class='no'>ll.mat</span> <span class='kw'>&lt;-</span> <span class='fu'>Reduce</span>(<span class='no'>rbind</span>,<span class='no'>ll</span>)
+<span class='no'>cond</span> <span class='kw'>&lt;-</span> <span class='no'>letters</span>[<span class='fl'>1</span>:<span class='no'>d</span>]
+<span class='fu'>matrix</span>(<span class='no'>cond</span>[<span class='no'>ll.mat</span>], <span class='kw'>ncol</span><span class='kw'>=</span><span class='no'>d</span>)</div><div class='output co'>#&gt;       [,1] [,2] [,3] [,4] [,5]
+#&gt;  [1,] "c"  "b"  "a"  "d"  "e" 
+#&gt;  [2,] "e"  "a"  "b"  "c"  "d" 
+#&gt;  [3,] "d"  "e"  "c"  "a"  "b" 
+#&gt;  [4,] "a"  "d"  "e"  "b"  "c" 
+#&gt;  [5,] "b"  "c"  "d"  "e"  "a" 
+#&gt;  [6,] "a"  "b"  "e"  "c"  "d" 
+#&gt;  [7,] "c"  "a"  "b"  "d"  "e" 
+#&gt;  [8,] "d"  "e"  "a"  "b"  "c" 
+#&gt;  [9,] "e"  "d"  "c"  "a"  "b" 
+#&gt; [10,] "b"  "c"  "d"  "e"  "a" 
+#&gt; [11,] "c"  "d"  "b"  "a"  "e" 
+#&gt; [12,] "a"  "b"  "c"  "e"  "d" 
+#&gt; [13,] "b"  "e"  "a"  "d"  "c" 
+#&gt; [14,] "d"  "a"  "e"  "c"  "b" 
+#&gt; [15,] "e"  "c"  "d"  "b"  "a" </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -110,7 +161,11 @@
       <li><a href="#value">Value</a></li>
 
       <li><a href="#details">Details</a></li>
-          </ul>
+
+      <li><a href="#see-also">See also</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
     <h2>Author</h2>
     

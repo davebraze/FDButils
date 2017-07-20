@@ -2,7 +2,7 @@
 % Please edit documentation in R/latinsq.R
 \name{latinList}
 \alias{latinList}
-\title{Latin squares.}
+\title{Create Latin squares.}
 \usage{
 latinList(nSquares = 3, nDims = 4)
 }
@@ -12,13 +12,13 @@ latinList(nSquares = 3, nDims = 4)
 \item{nDims}{Size of latin squares.}
 }
 \value{
-A list of nSquares latin squares, each nDim x nDim in size.
+A list of latin squares, nSquares in length. Each square is nDims x nDims in size.
 }
 \description{
-Get list of different latin squares.
+Get list of random latin squares.
 }
 \details{
-Get list of different latin squares.
+Get list of random latin squares. At present, these are not guaranteed to be unique.
 }
 \examples{
 d <- 5
@@ -29,7 +29,7 @@ cond <- letters[1:d]
 matrix(cond[ll.mat], ncol=d)
 }
 \seealso{
-magic::latin()
+\code{\link[magic]{latin}}
 }
 \author{
 David Braze \email{davebraze@gmail.com}

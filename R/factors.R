@@ -44,9 +44,9 @@ fact2char <- function(f) {
 ##'
 ##' @description None yet.
 ##'
-##' @details Reorders the levels of factor f as specified in new.order, which must contain all and
-##' only the existing levels of f (including unused levels), but in the desired order. If new.order
-##' and levels(f) do not contain exactly the same elements, then do nothing.
+##' @details Reorders the levels of factor f as specified in \code{new.order}, which must contain all and
+##' only the existing levels of f (including unused levels), but in the desired order. If \code{new.order}
+##' and \code{levels(f)} do not contain exactly the same elements, then do nothing.
 ##'
 ##' @param f A factor.
 ##' @param new.order A character vector containing all and only the levels of f, in the desired order.

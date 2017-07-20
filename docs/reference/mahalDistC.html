@@ -148,19 +148,19 @@ passed to <code><a href='http://www.rdocumentation.org/packages/stats/topics/cor
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>m</span> <span class='kw'>&lt;-</span> <span class='fu'>matrix</span>(<span class='fu'>rnorm</span>(<span class='fl'>400</span>, <span class='kw'>m</span><span class='kw'>=</span><span class='fl'>.8</span>, <span class='kw'>s</span><span class='kw'>=</span><span class='fl'>.05</span>), <span class='kw'>nrow</span><span class='kw'>=</span><span class='fl'>100</span>)
-<span class='no'>md</span> <span class='kw'>&lt;-</span> <span class='fu'>mahalDistC</span>(<span class='no'>m</span>)</div><div class='output co'>#&gt; [1] -2.5690e-16  1.6769e-16  2.9087e-16 -1.1868e-15</div><div class='input'><span class='no'>md</span>$<span class='no'>D2</span></div><div class='output co'>#&gt;   [1]  2.97436  4.72339  2.18015  1.76598  4.24976  2.54248  2.80078  6.74424
-#&gt;   [9]  5.93043  7.13901  2.32440  1.14126  0.53098  4.77365  1.04995  1.99202
-#&gt;  [17]  4.77175  0.85132  4.78196  3.94239  3.58040  2.68584  0.75355  6.38080
-#&gt;  [25]  2.25507  1.26518  0.96747  4.41500  6.41875  2.84140  3.57471  1.68254
-#&gt;  [33]  1.12231  3.47784  1.15747  2.45469  2.40872  5.36414  3.85015  4.17235
-#&gt;  [41]  2.34113  3.28712  6.15747  2.24287  3.14672  5.22034  2.67281  2.21431
-#&gt;  [49]  4.45034  1.91997  3.53400  6.74449  3.69145  4.17406  3.07995  1.57433
-#&gt;  [57]  3.83674  2.06501  5.95461  5.65415  2.25942  6.35145  1.56218  2.77843
-#&gt;  [65]  3.83399  7.95541  2.93609  4.52867  3.66752  7.82398  7.67939  3.79524
-#&gt;  [73]  6.98565  2.62151  6.71467  1.68156  3.17782  0.82093  3.37357  3.52008
-#&gt;  [81]  2.19382  5.02204  9.33457  5.77750  3.08773  4.71756  6.83319  2.54584
-#&gt;  [89]  0.39478 10.30729  2.93839 12.59544 10.66736  1.65489  8.00268  1.68182
-#&gt;  [97]  2.69333  4.90878  1.23124 13.34372</div><div class='input'><span class='fu'>hist</span>(<span class='no'>md</span>$<span class='no'>D2</span>)</div><div class='input'><span class='fu'>rug</span>(<span class='no'>md</span>$<span class='no'>D2</span>)</div><img src='mahalDistC-7.png' alt='' width='540' height='400' /><div class='input'>
+<span class='no'>md</span> <span class='kw'>&lt;-</span> <span class='fu'>mahalDistC</span>(<span class='no'>m</span>)</div><div class='output co'>#&gt; [1] -2.4930e-16 -7.7631e-16 -6.8738e-16 -5.4966e-16</div><div class='input'><span class='no'>md</span>$<span class='no'>D2</span></div><div class='output co'>#&gt;   [1]  6.86572  0.99676  2.19218  5.76908  1.80065  1.79964  4.17674  0.99408
+#&gt;   [9]  8.08486  3.71605  3.57736  5.10082 10.00477  1.25749  0.80351  2.43142
+#&gt;  [17]  7.63162  2.25017  0.46952  2.84965  3.80115  4.38063  3.09175  5.88551
+#&gt;  [25]  8.85930  1.57023  2.86721  4.87529  4.64969  1.48567  3.53220  4.99795
+#&gt;  [33]  6.68956  8.73424  2.06865  1.25265  3.69839  2.75324  5.99976  4.53403
+#&gt;  [41]  1.97774  2.26428  4.51852  4.47931  2.27696  0.58966  5.71300  5.28720
+#&gt;  [49]  4.14030  3.56785  2.04917  0.98376  4.70555  8.31002  6.42754  2.92272
+#&gt;  [57]  1.72049  1.54745  1.71093  5.29801  1.05281  4.25262  7.57277  4.32427
+#&gt;  [65]  2.77964  2.87362  4.12329  3.80800  4.52026  2.99191  3.60761  9.88622
+#&gt;  [73]  2.10139  2.59604  9.61420  7.79165 14.19580  1.62031  3.73735  1.23032
+#&gt;  [81]  4.77875  1.77159  4.04475  1.38401  5.81216  3.75231  1.47223  4.11652
+#&gt;  [89]  0.26365  3.33226  1.39039 13.39033  4.01040  1.09121  5.37145  0.93283
+#&gt;  [97]  3.54427  3.08196  7.09566  1.69353</div><div class='input'><span class='fu'>hist</span>(<span class='no'>md</span>$<span class='no'>D2</span>)</div><div class='input'><span class='fu'>rug</span>(<span class='no'>md</span>$<span class='no'>D2</span>)</div><img src='mahalDistC-7.png' alt='' width='540' height='400' /><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

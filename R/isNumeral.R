@@ -5,7 +5,8 @@
 ##' @details
 ##' Checks element-wise as to whether each item in a vector of strings can be coerced to numeric.
 ##'
-##' Basics cribbed from \url{http://rosettacode.org/wiki/Determine_if_a_string_is_numeric#R}
+##' Basics cribbed from \url{http://rosettacode.org/wiki/Determine_if_a_string_is_numeric#R}.
+##'
 ##' @param c A vector of strings.
 ##' @return A vector of logicals, NA where \code{is.na(c)}.
 ##' @author David Braze \email{davebraze@@gmail.com}
@@ -21,7 +22,9 @@ isNumeral <- function(c) {
     retval
 }
 
-##' @details \code{is.numeral()} is deprecated.
+##' @details
+##'
+##' \code{is.numeral()} is deprecated.
 ##' @rdname isNumeral
 ##' @export
 is.numeral <- function(c) {

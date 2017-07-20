@@ -1,14 +1,14 @@
-##' @title Latin squares.
+##' @title Create Latin squares.
 ##'
-##' @description Get list of different latin squares.
+##' @description Get list of random latin squares.
 ##'
-##' @details Get list of different latin squares.
+##' @details Get list of random latin squares. At present, these are not guaranteed to be unique.
 ##'
 ##' @param nSquares Number of latin squares to create.
 ##' @param nDims Size of latin squares.
-##' @return A list of nSquares latin squares, each nDim x nDim in size.
+##' @return A list of latin squares, nSquares in length. Each square is nDims x nDims in size.
 ##' @author David Braze \email{davebraze@@gmail.com}
-##' @seealso magic::latin()
+##' @seealso \code{\link[magic]{latin}}
 ##' @export
 ##' @examples
 ##' d <- 5

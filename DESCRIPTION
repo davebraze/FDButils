@@ -1,7 +1,7 @@
 Package: FDButils
 Title: Low Level Utility Functions
-Version: 0.0.7
-Date: 2017-04-29
+Version: 0.0.8
+Date: 2017-07-20
 Authors@R: c(person("David", "Braze", email="davebraze@gmail.com", role=c("aut", "cre")))
 Maintainer: Maintainer: David Braze <davebraze@gmail.com>
 Description: Stable low level utility functions, mostly for use in other FDB
@@ -14,7 +14,7 @@ License: MIT + file LICENSE
 LazyData: true
 URL: https://github.com/davebraze/FDButils
 BugReports: https://github.com/davebraze/FDButils/issues
-Collate: 
+Collate:
     'FDButils.R'
     'compCorr.R'
     'factors.R'

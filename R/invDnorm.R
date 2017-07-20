@@ -4,7 +4,8 @@
 ##'     inverse.
 ##'
 ##' @details
-##' Cribbed from <http://stackoverflow.com/questions/19589191/the-reverse-inverse-of-the-normal-distribution-function-in-r>
+##' Cribbed from \url{http://stackoverflow.com/questions/19589191/the-reverse-inverse-of-the-normal-distribution-function-in-r}.
+##'
 ##' @param x A numeric vector.
 ##' @return A vector the same length as x.
 ##' @author Dave Braze \email{davebraze@@gmail.com}
@@ -19,6 +20,7 @@ invDnorm <- function(x) {
 }
 
 ##' @details
+##'
 ##' \code{inv_dnorm()} is deprecated.
 ##' @rdname invDnorm
 ##' @export

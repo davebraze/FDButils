@@ -15,7 +15,9 @@ isWholeNumber <- function(v, tol = .Machine$double.eps^0.5) {
     abs(v - round(v)) < tol
 }
 
-##' @details \code{is.wholenumber()} is deprecated.
+##' @details
+##'
+##' \code{is.wholenumber()} is deprecated.
 ##' @rdname isWholeNumber
 ##' @export
 is.wholenumber <- function(v, tol) {
