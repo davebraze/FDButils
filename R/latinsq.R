@@ -1,3 +1,9 @@
+## TODO: Look into magic::rlatin() as an alternative means to build
+## sets of random latin squares.
+##
+## TODO: Look at package 'crossdes' for better thought out latin
+## square designs.
+
 ##' @title Create Latin squares.
 ##'
 ##' @description Get list of random latin squares.
