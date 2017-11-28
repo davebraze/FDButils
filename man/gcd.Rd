@@ -3,7 +3,7 @@
 \name{gcd0}
 \alias{gcd0}
 \alias{gcd}
-\title{Get greatest common divisor of two numbers.}
+\title{Get the greatest common divisor.}
 \usage{
 gcd0(a, b)
 
@@ -17,20 +17,20 @@ gcd(v)
 \item{v}{A vector of whole numbers}
 }
 \value{
-The greatest common divisor of a and b.
+gcd0() returns the greatest common divisor of a and b.
 
-The greatest common divisor of the numbers in v.
+gcd() returns the greatest common divisor of the numbers in v.
 }
 \description{
-Takes two whole numbers as arguments and returns their greatest common divisor.
+gcd0() Takes two whole numbers as arguments and returns their greatest common divisor.
 
-Takes a vector of whole numbers and returns their greatest common divisor.
+gcd() takes a vector of whole numbers and returns their greatest common divisor.
 }
 \details{
-Takes two whole numbers as arguments and returns their greatest common divisor. Throws
+gcd0() Takes two whole numbers as arguments and returns their greatest common divisor. Throws
     an error if either number is not a whole number.
 
-Takes a vector, v, of whole numbers as argument and returns their greatest common
+gcd() takes a vector, v, of whole numbers as argument and returns their greatest common
     divisor. Throws an error if any number in v is not a whole number.
 }
 \examples{
