@@ -17,12 +17,13 @@
 gcd0 <- function(a,b) {
     if (!(isWholeNumber(a) && isWholeNumber(b))) stop("gcd0() is defined over whole numbers only.")
     a <- abs(a); b <- abs(b)
-    if (a>b) ss <- b
-    else ss <-  a
-    for (ii in 1:ss) {
-        if((a %% ii == 0) && (b %% ii == 0)) retval <- ii
+    ss <- min(a,b)
+    
+    for (ii in ss:1) {
+        if((a %% ii == 0) && (b %% ii == 0)) return(ii)
     }
-    retval
+    
+    stop("No GCD (should not be possible)")
 }
 
 ##' @title Get the greatest common divisor.
