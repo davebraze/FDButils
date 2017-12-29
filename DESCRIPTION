@@ -14,7 +14,7 @@ License: MIT + file LICENSE
 LazyData: true
 URL: https://github.com/davebraze/FDButils
 BugReports: https://github.com/davebraze/FDButils/issues
-Collate:
+Collate: 
     'FDButils.R'
     'compCorr.R'
     'factors.R'
@@ -34,5 +34,6 @@ Collate:
     'se.R'
     'seP.R'
     'series.R'
+    'timestamp.R'
     'zzz.R'
 RoxygenNote: 6.0.1
