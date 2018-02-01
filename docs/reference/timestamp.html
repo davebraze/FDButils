@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get the greatest common divisor. — gcd0 â€¢ FDButils</title>
+<title>Get a human readable timestamp as string. — timestamp â€¢ FDButils</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -73,55 +73,31 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get the greatest common divisor.</h1>
+    <h1>Get a human readable timestamp as string.</h1>
     </div>
 
     
-    <p>gcd0() Takes two whole numbers as arguments and returns their greatest common divisor.</p>
-<p>gcd() takes a vector of whole numbers and returns their greatest common divisor.</p>
+    <p>Return a human readable timestamp as a string: 'YYYYMMDD-HHMMSS'.</p>
     
 
-    <pre><span class='fu'>gcd0</span>(<span class='no'>a</span>, <span class='no'>b</span>)
-
-<span class='fu'>gcd</span>(<span class='no'>v</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>a</th>
-      <td><p>A whole number</p></td>
-    </tr>
-    <tr>
-      <th>b</th>
-      <td><p>A whole number</p></td>
-    </tr>
-    <tr>
-      <th>v</th>
-      <td><p>A vector of whole numbers</p></td>
-    </tr>
-    </table>
-    
+    <pre><span class='fu'>timestamp</span>()</pre>
+        
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>gcd0() returns the greatest common divisor of a and b.</p>
-<p>gcd() returns the greatest common divisor of the numbers in v.</p>
+    <p>A string corresponding to a human readable timestamp: 'YYYYMMDD-HHMMSS'.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>gcd0() Takes two whole numbers as arguments and returns their greatest common divisor. Throws
-    an error if either number is not a whole number.</p>
-<p>gcd() takes a vector, v, of whole numbers as argument and returns their greatest common
-    divisor. Throws an error if any number in v is not a whole number.</p>
+    <p>Convenience function to get a human readable timestamp string: 'YYYYMMDD-HHMMSS'.
+This is mostly useful for including in filenames.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>gcd0</span>(<span class='fl'>36</span>, <span class='fl'>48</span>)</div><div class='output co'>#&gt; [1] 12</div><div class='input'><span class='fu'>gcd0</span>(-<span class='fl'>36</span>, <span class='fl'>48</span>)</div><div class='output co'>#&gt; [1] 12</div><div class='input'><span class='fu'>gcd</span>(<span class='fu'>c</span>(<span class='fl'>48</span>, <span class='fl'>96</span>, <span class='fl'>144</span>))</div><div class='output co'>#&gt; [1] 48</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>timestamp</span>()</div><div class='output co'>#&gt; [1] "20180201-151919"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
 
@@ -132,8 +108,6 @@
 
     <h2>Author</h2>
     
-David Braze <a href='mailto:davebraze@gmail.com'>davebraze@gmail.com</a>
-
 David Braze <a href='mailto:davebraze@gmail.com'>davebraze@gmail.com</a>
 
   </div>
