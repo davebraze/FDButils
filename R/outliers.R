@@ -18,6 +18,14 @@
 ##'     Both methods are rather simple-minded ways of IDing possible outliers
 ##'     in the context of a presumed normal distribution.
 ##'
+##'     TODO: Look around for inspiration as to other approaches, e.g.,
+##'
+##'     Leys, C., Ley, C., Klein, O., Bernard, P., & Licata, L. (2013). Detecting outliers: Do not
+##'     use standard deviation around the mean, use absolute deviation around the median. Journal of
+##'     Experimental Social Psychology, 49(4), 764-766. doi:10.1016/j.jesp.2013.03.013
+##'
+##'     Code for MAD based outlier detection at: https://raw.githubusercontent.com/hauselin/Rcode/master/detectOutliers.R
+##'
 ##' @param x Numeric vector.
 ##' @param method Method for identifying outliers. Defaults to
 ##'     "boxplot". Other possibility is "stdev".
