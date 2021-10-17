@@ -1,27 +1,31 @@
-R_OPTS = --vanilla
+R_OPTS = --vanilla -e
+DATE = $(shell date.exe "+%Y%m%d")
 
 date:
-	date.exe "+%Y%m%d"
+	@echo $(DATE)
 
-### building a package
+##### build and check package
 
-document: # Build documentation
-	R $(R_OPTS) -e "devtools::document(pkg='.')"
+## Build the package. Set 'binary=FALSE' (build a source package) for cross-platform portability.
+build: 
+	R $(R_OPTS) "devtools::build(pkg='.', binary=FALSE, vignettes=TRUE, manual=TRUE)"
 
-precheck: # Check for problems. Must pass without errors, and preferably no warnings. 
-	R $(R_OPTS) -e "devtools::check(pkg='.')"
+## Check the built package for current version number.
+checkbuilt: 
+	R $(R_OPTS) "devtools::check_built(path=here::here('..', 'FDButils_0.0.9.tar.gz'))"
 
-build: ## build the package
-	R $(R_OPTS) -e "devtools::build(pkg='.', path='..', binary=FALSE, vignettes=FALSE, manual=FALSE)"
+## Build and check the package. Does not save built package. Must pass checks with no errors, and preferably no warnings. 
+check:
+	R $(R_OPTS) "devtools::check(pkg='.')"
 
-check: ## check the built package
-	R $(R_OPTS) -e "devtools::check_built(path='..', 'FDButils_0.0.8.tar.gz')"
+##### Build documentation in various formats in order to check it's ok. 
+
+## Build roxygen2 documentation
+document: 
+	R $(R_OPTS) "devtools::document(pkg='.')"
+
+## Build PDF manual and put it in the parent directory to the package.
+manual: 
+	R $(R_OPTS) "devtools::build_manual(pkg='.')"
 
 
-
-nogo:
-	R $(R_OPTS) -e "knitr::purl('$(source)')" ## pull source from Rmd file
-	R $(R_OPTS) -e "rmarkdown::render('"03-slides.Rmd"')"
-	rm -f "02-cohort1-dibels-pssa.R"
-
-### cleaning up
