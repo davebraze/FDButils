@@ -18,7 +18,12 @@ checkbuilt:
 check:
 	R $(R_OPTS) "devtools::check(pkg='.')"
 
-##### Build documentation in various formats in order to check it's ok. 
+##### Build pkgdown site from scratch (online documentation)
+pkgdown:
+	R $(R_OPTS) "pkgdown::clean_site(pkg='.')"
+	R $(R_OPTS) "pkgdown::build_site(pkg='.', preview=TRUE)"
+
+##### Build documentation in various formats in order to check it's ok.
 
 ## Build roxygen2 documentation
 document: 
@@ -27,5 +32,3 @@ document:
 ## Build PDF manual and put it in the parent directory to the package.
 manual: 
 	R $(R_OPTS) "devtools::build_manual(pkg='.')"
-
-
