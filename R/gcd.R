@@ -18,11 +18,11 @@ gcd0 <- function(a,b) {
     if (!(isWholeNumber(a) && isWholeNumber(b))) stop("gcd0() is defined over whole numbers only.")
     a <- abs(a); b <- abs(b)
     ss <- min(a,b)
-    
+
     for (ii in ss:1) {
         if((a %% ii == 0) && (b %% ii == 0)) return(ii)
     }
-    
+
     stop("No GCD (should not be possible)")
 }
 
@@ -35,7 +35,6 @@ gcd0 <- function(a,b) {
 ##'
 ##' @param v A vector of whole numbers
 ##' @return gcd() returns the greatest common divisor of the numbers in v.
-##' @author David Braze \email{davebraze@@gmail.com}
 ##' @export
 ##' @examples
 ##' gcd(c(48, 96, 144))

@@ -4,8 +4,13 @@
 \alias{mahalDistC}
 \title{Get squared Mahalanobis distances to centroid.}
 \usage{
-mahalDistC(m, scale = TRUE, use = "complete.obs", center = c("mean",
-  "median"), ...)
+mahalDistC(
+  m,
+  scale = TRUE,
+  use = "complete.obs",
+  center = c("mean", "median"),
+  ...
+)
 }
 \arguments{
 \item{m}{A data.frame or matrix. Observations in rows.}

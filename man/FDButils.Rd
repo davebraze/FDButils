@@ -3,7 +3,6 @@
 \docType{package}
 \name{FDButils}
 \alias{FDButils}
-\alias{FDButils-package}
 \title{Utility and Convenience Functions.}
 \description{
 This package is a repository for stable low-level

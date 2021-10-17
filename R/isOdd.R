@@ -33,7 +33,6 @@ isEven <- function (n)
 ##' @param n A numeric vector.
 ##' @return A logical vector the same length as n. TRUE if n is an integer and is even, FALSE if n
 ##' is an integer and not even, NA otherwise.
-##' @author David Braze \email{davebraze@@gmail.com}
 ##' @export
 isOdd <-
     function(n) {
