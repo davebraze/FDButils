@@ -1,4 +1,5 @@
 ## R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+## Also see https://www.datacamp.com/community/tutorials/cd-package-docs-pkgdown-travis
 
 language: R
 r_packages:

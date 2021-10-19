@@ -13,7 +13,6 @@ test:
 date:
 	@echo $(DATE)
 
-
 ##### targets to build and check package
 
 ## Build the package. Set 'binary=FALSE' (build a source package) for cross-platform portability.
@@ -44,3 +43,4 @@ document:
 ## Build PDF manual and put it in the parent directory to the package.
 manual: 
 	R $(R.OPTS) "devtools::build_manual(pkg='.')"
+
