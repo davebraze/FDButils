@@ -19,6 +19,3 @@ Return TRUE if n is an integer that is not evenly divisible by 2.
 \details{
 Test whether elements of numeric vector are odd. For whole numbers return TRUE or FALSE. For decimals return NA.
 }
-\author{
-David Braze \email{davebraze@gmail.com}
-}

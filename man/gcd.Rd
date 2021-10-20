@@ -40,6 +40,4 @@ gcd(c(48, 96, 144))
 }
 \author{
 David Braze \email{davebraze@gmail.com}
-
-David Braze \email{davebraze@gmail.com}
 }
