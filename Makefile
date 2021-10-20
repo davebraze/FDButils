@@ -1,12 +1,19 @@
+## Makefile tailored to R package development.
+## 
+## My general strategy here is to use calls to devtools:: functions, rather than
+## calling 'R CMD ...' directly.
+## 
+## The Makefile is intended to live in a packages top-level folder. It should work
+## from there with no need for package-specific mods.
+
 R.OPTS := --vanilla -e
 DATE := $(shell date "+%Y%m%d")
 PKG.VERS := $(shell Rscript $(R.OPTS) "cat(read.dcf('DESCRIPTION', fields='Version'))")
 PKG.NAME := $(shell Rscript $(R.OPTS) "cat(read.dcf('DESCRIPTION', fields='Package'))")
 BUILT.PKG := $(PKG.NAME)_$(PKG.VERS).tar.gz
 
-## My general strategy here is to use calls to devtools:: functions, rather than
-## calling 'R CMD ...' directly.
-## The Makefile is intended to live in the package top-level folder.
+## Few if any targets correspond to files so, list them here to ensure they always run.
+.phoney: help build checkbuilt check pkgdown document manual versiontab installgh installtb
 
 ## TODO:
 
