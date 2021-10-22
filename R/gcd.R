@@ -1,4 +1,4 @@
-##' @title Get the greatest common divisor.
+##' @title Greatest common divisor.
 ##'
 ##' @description gcd0() Takes two whole numbers as arguments and returns their greatest common divisor.
 ##'
@@ -26,7 +26,7 @@ gcd0 <- function(a,b) {
     stop("No GCD (should not be possible)")
 }
 
-##' @title Get the greatest common divisor.
+##' @title Greatest common divisor.
 ##'
 ##' @description gcd() takes a vector of whole numbers and returns their greatest common divisor.
 ##'
