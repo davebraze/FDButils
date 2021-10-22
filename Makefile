@@ -59,7 +59,7 @@ document:
 	R $(R.OPTS) "devtools::document(pkg='.')"
 
 ## Build PDF manual and put it in the parent directory to the package.
-manual: 
+manual: document
 	R $(R.OPTS) "devtools::build_manual(pkg='.')"
 
 ##### Prepare for release of new version
