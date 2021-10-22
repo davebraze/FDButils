@@ -3,7 +3,7 @@
 \name{gcd0}
 \alias{gcd0}
 \alias{gcd}
-\title{Get the greatest common divisor.}
+\title{Greatest common divisor.}
 \usage{
 gcd0(a, b)
 

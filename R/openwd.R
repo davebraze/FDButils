@@ -9,7 +9,6 @@
 ##' @export
 ##' @examples
 ##' openwd()
-##'
 openwd <- function () {
     info <- sessionInfo()
     if (grepl('win', info$running, ignore.case = TRUE)) {

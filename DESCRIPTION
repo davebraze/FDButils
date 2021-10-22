@@ -14,7 +14,7 @@ LazyData: true
 URL: https://github.com/davebraze/FDButils
 BugReports: https://github.com/davebraze/FDButils/issues
 Collate: 
-    'FDButils.R'
+    'FDButils-package.R'
     'compCorr.R'
     'factors.R'
     'gcd.R'
@@ -27,6 +27,7 @@ Collate:
     'latinsq.R'
     'mahalDist.R'
     'nobs.R'
+    'openwd.R'
     'outliers.R'
     'sampleMode.R'
     'sciNot.R'
