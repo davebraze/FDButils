@@ -15,9 +15,6 @@ PKG.VERS := $(shell Rscript $(R.OPTS) "cat(read.dcf('DESCRIPTION', fields='Versi
 PKG.NAME := $(shell Rscript $(R.OPTS) "cat(read.dcf('DESCRIPTION', fields='Package'))")
 BUILT.PKG := $(PKG.NAME)_$(PKG.VERS).tar.gz
 
-.phoney: help build checkbuilt check pkgdown document manual versiontab install.gh install.local
-## Few targets correspond to files, so, list them here to ensure they always run.
-
 ## TODO:
 
 help:
@@ -35,8 +32,10 @@ help:
 	@echo --
 	@echo 
 
+.phoney: help build checkbuilt check pkgdown document manual versiontab install.gh install.local
+## Few targets correspond to files, so, list them here to ensure they always run.
+
 ##### Targets to build and check package.
-##### Should pass checks with no errors, and preferably no warnings. 
 
 build: 
 ## Build package with 'binary=FALSE' for portability. Put tarball in parent to source directory.
@@ -51,16 +50,16 @@ check:
 ## Build and check the package. Does not save built package. 
 	R $(R.OPTS) "devtools::check(pkg='.')"
 
-pkgdown: document
-## Build pkgdown site from scratch (online documentation). Overwrites existing site.
-	R $(R.OPTS) "pkgdown::clean_site(pkg='.')"
-	R $(R.OPTS) "pkgdown::build_site(pkg='.', preview=TRUE)"
-
 ##### targets to build documentation in various formats, mostly in order to check it's ok before release
 
 document: 
 ## Build rds documentation via roxygen2.
 	R $(R.OPTS) "devtools::document(pkg='.')"
+
+pkgdown: document
+## Build pkgdown site from scratch (online documentation). Overwrites existing site.
+	R $(R.OPTS) "pkgdown::clean_site(pkg='.')"
+	R $(R.OPTS) "pkgdown::build_site(pkg='.', preview=TRUE)"
 
 manual: document
 ## Build PDF manual and put it in the parent directory to the package.
