@@ -29,7 +29,7 @@ cleanNumbers <- function(c) {
     retval <- cleanK(retval)
     retval <- cleanStar(retval)
     retval <- cleanPlus(retval)
-    retval <- cleanCruft(retval)
+    retval <- scrubc(retval)
     retval
 }
 
@@ -114,7 +114,7 @@ cleanK <- function(c) {
 ##' @noRd
 ##' @rdname cleanNumbers
 ##' @examples
-##' c = c("*K.1", "K.8", "1.6", "2.1", "3.0", ">12.9")
+##' c  = c("*K.1", "K.8", "1.6", "2.1", "3.0", ">12.9")
 ##' cleanStar(c)
 ##'
 cleanStar <- function(c) {
@@ -172,4 +172,40 @@ cleanCruft <- function (c) {
     cruft <- stringr::str_remove(cruft, "^.1. ")
     if(count) warning("Removing ", count, " characters from the set: ", cruft)
     stringr::str_remove_all(c, "[^-.0-9]")
+}
+
+##' @title Strip non-numeric characters from string.
+##'
+##' @details
+##' \code{scrubc()} removes non-numeric characters from test scores,
+##' often present due to fat-fingered data entry, in anticipation of converting to numeric.
+##' Report the number of such characters removed. Characters to be removed are specified by regular expression (re).
+##' The default re is "[^-.0-9]", which will remove all non-numeric characters at one swoop.
+##'
+##' A typical use case in interactive use is to remove exactly 1 specific character at a time, e.g.,
+##' \code{scrubc(c=c("*K.1", "K.8", "1.6", "2.1", "3.0", ">12.9"), re="[>]")}. This serves to alert
+##' the analyst to how many of each non-numeric character removed.
+##'
+##' @param c A character vector of potentially numeric values.
+##' @param re A regular expression specifying which characters to remove. For best effect,
+##' re should begin with "[" and end with "]" to specify a character set. At some point, I'll add
+##' a check to enforce this.
+##' @export
+##' @@noRd
+##' @rdname cleanNumbers
+##' @examples
+##' c = c("0.1", "_0.8", "1.6", "2.1`", "+3. 0", "12.9")
+##' scrubc(c)
+##'
+scrubc <- function (c, re="[^-.0-9]") {
+    ## TODO: Check to ensure re begins with "[" and ends with "]".
+    count <- sum(stringr::str_count(c, re), na.rm=TRUE)
+    removed <- stringr::str_extract_all(c, re, simplify=TRUE)
+    removed <- as.vector(removed)
+    removed <- unique(removed)
+    removed <- stringi::stri_remove_empty_na(removed)
+    removed <- capture.output(print(removed))
+    removed <- stringr::str_remove(removed, "^.1. ")
+    if(count) cat(paste0("Removing ", count, " characters from the set: ", removed, "\n"))
+    stringr::str_remove_all(c, re)
 }
