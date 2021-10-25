@@ -10,7 +10,8 @@ Depends:
 Imports:
     magic,
     stringr,
-    stringi
+    stringi,
+    crayon
 License: MIT + file LICENSE
 LazyData: true
 URL: https://github.com/davebraze/FDButils

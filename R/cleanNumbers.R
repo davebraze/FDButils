@@ -24,59 +24,13 @@
 ##' cleanNumbers(c)
 ##'
 cleanNumbers <- function(c) {
-    retval <- cleanLessthan(c)
-    retval <- cleanGreaterthan(retval)
+    retval <- scrubc(c, re="[<]") ## cleanLessthan(c)
+    retval <- scrubc(retval, re="[>]") ## cleanGreaterthan(retval)
     retval <- cleanK(retval)
-    retval <- cleanStar(retval)
-    retval <- cleanPlus(retval)
+    retval <- scrubc(retval, re="[*]") ## cleanStar(retval)
+    retval <- scrubc(retval, re="[+]") ## cleanPlus(retval)
     retval <- scrubc(retval)
     retval
-}
-
-##' @title Remove "<" from string.
-##'
-##' @details
-##' \code{cleanLessthan()} removes "<" from ordinal values at end of range in anticipation of converting to numeric.
-##' These sometimes occur in otherwise numeric standardized test scores.
-##' Report the number of such characters removed.
-##'
-##' @param c A character vector of potentially numeric values.
-##' @export
-##' @noRd
-##' @rdname cleanNumbers
-##' @examples
-##' c = c("<1", "1", "2", "3")
-##' cleanLessthan(c)
-##'
-cleanLessthan <- function(c) {
-    ## maybe add an option to decrement values expressed with "<"
-    n <- sum(stringr::str_count(c, "<"), na.rm=TRUE)
-    if(n) warning("Removing ", n, " '<'")
-    stringr::str_remove_all(c, "<")
-}
-
-##' @title Remove ">" from string.
-##'
-##' @details
-##' \code{cleanGreaterthan()} removes ">" from ordinal values at end of range in anticipation of converting to numeric.
-##' These sometimes occur in otherwise numeric standardized test scores.
-##' Report the number of such characters removed.
-##'
-##' @param c A character vector of potentially numeric values.
-##' @export
-##' @noRd
-##' @rdname cleanNumbers
-##' @examples
-##' c = c("1", "1", "2", ">3")
-##' cleanGreaterthan(c)
-##'
-cleanGreaterthan <- function(c) {
-    ## remove ">" from ordinal values at end of range in anticipation of converting to numeric
-    ## I'm assuming there will be no more than 1 per entry
-    ## maybe add an option to increment values expressed with ">"
-    n <- sum(stringr::str_count(c, ">"), na.rm=TRUE)
-    if(n) warning("Removing ", n, " '>'")
-    stringr::str_remove_all(c, ">")
 }
 
 ##' @title Replace "K" with "0" (zero).
@@ -102,79 +56,10 @@ cleanK <- function(c) {
     stringr::str_replace_all(c, "[kK]", "0")
 }
 
-##' @title Remove "*" from string.
-##'
-##' @details
-##' \code{cleanStar()} removes "*" from ordinal values in anticipation of converting to numeric.
-##' These sometimes occur in otherwise numeric standardized test scores.
-##' Report the number of such characters removed.
-##'
-##' @param c A character vector of potentially numeric values.
-##' @export
-##' @noRd
-##' @rdname cleanNumbers
-##' @examples
-##' c  = c("*K.1", "K.8", "1.6", "2.1", "3.0", ">12.9")
-##' cleanStar(c)
-##'
-cleanStar <- function(c) {
-    ## remove "*" that occur sometimes with otherwise numeric values
-    ## I'm assuming there will be no more than 1 per entry.
-    n <- sum(stringr::str_count(c, "[*]"), na.rm=TRUE)
-    if(n) warning("Removing ", n, " '*'")
-    stringr::str_remove_all(c, "[*]")
-}
-
-##' @title Remove "+" from string.
-##'
-##' @details
-##' \code{cleanPlus()} removes "+" from ordinal values at end of range in anticipation of converting to numeric.
-##' These sometimes occur in otherwise numeric standardized test scores.
-##' Report the number of such characters removed.
-##'
-##' @param c A character vector of potentially numeric values.
-##' @export
-##' @noRd
-##' @rdname cleanNumbers
-##' @examples
-##' c = c("*K.1", "K.8", "1.6", "2.1", "3.0", "12.9+")
-##' cleanPlus(c)
-##'
-cleanPlus <- function (c) {
-    ## remove "+" that occur sometimes with otherwise numeric values
-    ## I'm assuming there will be no more than 1 per entry.
-    n <- sum(stringr::str_count(c, "[+]"), na.rm=TRUE)
-    if(n) warning("Removing ", n, " '+'")
-    stringr::str_remove_all(c, "[+]")
-}
-
-##' @title Strip all non-numeric characters from string.
-##'
-##' @details
-##' \code{cleanCruft()} removes residual non-numeric characters from test scores,
-##' often present due to fat-fingered data entry, in anticipation of converting to numeric.
-##' Report the number of such characters removed.
-##'
-##' @param c A character vector of potentially numeric values.
-##' @export
-##' @noRd
-##' @rdname cleanNumbers
-##' @examples
-##' c = c("0.1", "_0.8", "1.6", "2.1`", "+3. 0", "12.9")
-##' cleanCruft(c)
-##'
-cleanCruft <- function (c) {
-    count <- sum(stringr::str_count(c, "[^-.0-9]"), na.rm=TRUE)
-    cruft <- stringr::str_extract_all(c, "[^-.0-9]", simplify=TRUE)
-    cruft <- as.vector(cruft)
-    cruft <- stringi::stri_remove_empty_na(cruft)
-    cruft <- capture.output(print(cruft))
-    cruft <- stringr::str_remove(cruft, "^.1. ")
-    if(count) warning("Removing ", count, " characters from the set: ", cruft)
-    stringr::str_remove_all(c, "[^-.0-9]")
-}
-
 ##' @title Strip non-numeric characters from string.
+##'
+##' @description
+##' \code{scrubc()} removes non-numeric characters from test scores.
 ##'
 ##' @details
 ##' \code{scrubc()} removes non-numeric characters from test scores,
@@ -194,10 +79,10 @@ cleanCruft <- function (c) {
 ##' @@noRd
 ##' @rdname cleanNumbers
 ##' @examples
-##' c = c("0.1", "_0.8", "1.6", "2.1`", "+3. 0", "12.9")
+##' c <- c("0.1", "_0.8", "1.6", "2.1`", "+3. 0", "12.9")
 ##' scrubc(c)
 ##'
-scrubc <- function (c, re="[^-.0-9]") {
+scrubc <- function(c, re="[^-.0-9]") {
     ## TODO: Check to ensure re begins with "[" and ends with "]".
     count <- sum(stringr::str_count(c, re), na.rm=TRUE)
     removed <- stringr::str_extract_all(c, re, simplify=TRUE)
@@ -206,6 +91,6 @@ scrubc <- function (c, re="[^-.0-9]") {
     removed <- stringi::stri_remove_empty_na(removed)
     removed <- capture.output(print(removed))
     removed <- stringr::str_remove(removed, "^.1. ")
-    if(count) cat(paste0("Removing ", count, " characters from the set: ", removed, "\n"))
+    if(count) cat(crayon::blue(paste0("Removing ", count, " characters from the set: ", removed, "\n")))
     stringr::str_remove_all(c, re)
 }
