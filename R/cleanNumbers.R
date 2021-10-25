@@ -64,7 +64,7 @@ cleanNumbers <- function(c) {
 ##' \code{\link{stringr::str_replace_all()}}
 ##' @examples
 ##' c = c("<K.1", "K.8", "1.6", "2.1", "3.0", ">12.9")
-##' swap(c)
+##' swapc(c)
 ##'
 swapc <- function(c, re="[Kk]", repl="0" ) {
     ## I'm assuming there will be no more than 1 per entry
