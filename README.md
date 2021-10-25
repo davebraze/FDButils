@@ -4,10 +4,9 @@ FDButils
 [![Travis-CI Build Status](https://travis-ci.org/davebraze/FDButils.svg?branch=master)](https://travis-ci.org/davebraze/FDButils)
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-A grab-bag of utility functions. Code in this package
-should make use only of functions in the dozen or so "base R"
-packages. It should also be pretty stable, as other packages may
-depend on it.
+
+The FDButils package holds a grab-bag of utility functions used by FDB. It includes few dependencies beyond the R 'base' and 'recommended' packages, but do see DESCRIPTION file for a handful of others. In general, FDButils and its dependencies should be pretty stable.
+
 
 Install with remotes::install\_github():
 
