@@ -7,13 +7,15 @@
 openwd()
 }
 \value{
-
+TRUE if successful, FALSE otherwise.
 }
 \description{
 Open a file browser in the current working directory, on MS Windows only.
 }
 \details{
-openwd() opens a standard file browser in the current working directory. Currently it works on on MS Windows only. Does nothing but issues a warning on other platforms.
+\code{openwd()} opens a standard file browser in the current working directory.
+Currently it works on on MS Windows only. Does nothing but issues a
+warning on other platforms.
 }
 \examples{
 openwd()

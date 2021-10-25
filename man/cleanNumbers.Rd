@@ -23,10 +23,10 @@ are simply removed. The letter "K" is \emph{\strong{replaced}} with "0" (zero). 
 characters are removed. A count of each type of character removed or replaced is
 printed to the console.
 
-\code{cleanNumbers()} calls helper functions \code{\link{scrubc()}} and \code{\link{swapc()}}
-to do its work.
+\code{cleanNumbers()} calls helper functions \code{\link[=scrubc]{scrubc()}} and
+\code{\link[=scrubc]{swapc()}} to do its work.
 
-Advantages over \code{\link{readr::parse_number()}} are that it provides
+Advantages over \code{\link[readr]{parse_number}} are that it provides
 explicit alerts as to what characters are being removed or replaced and
 in what quantity. Useful in cases where you are working with unfamiliar
 data (e.g., client data, or found data).
@@ -37,8 +37,8 @@ cleanNumbers(c)
 
 }
 \seealso{
-\code{\link{readr::parse_number()}}
-\code{\link{scrubc()}}
+\code{\link[readr]{parse_number}}
+\code{\link[=scrubc]{scrubc()}}
 }
 \author{
 Dave Braze \email{davebraze@gmail.com}

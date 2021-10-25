@@ -10,10 +10,10 @@
 ##' characters are removed. A count of each type of character removed or replaced is
 ##' printed to the console.
 ##'
-##' \code{cleanNumbers()} calls helper functions \code{\link{scrubc()}} and \code{\link{swapc()}}
-##' to do its work.
+##' \code{cleanNumbers()} calls helper functions \code{\link[=scrubc]{scrubc()}} and
+##' \code{\link[=scrubc]{swapc()}} to do its work.
 ##'
-##' Advantages over \code{\link{readr::parse_number()}} are that it provides
+##' Advantages over \code{\link[readr]{parse_number}} are that it provides
 ##' explicit alerts as to what characters are being removed or replaced and
 ##' in what quantity. Useful in cases where you are working with unfamiliar
 ##' data (e.g., client data, or found data).
@@ -23,8 +23,8 @@
 ##' @export
 ##' @author Dave Braze \email{davebraze@@gmail.com}
 ##' @seealso
-##' \code{\link{readr::parse_number()}}
-##' \code{\link{scrubc()}}
+##' \code{\link[readr]{parse_number}}
+##' \code{\link[=scrubc]{scrubc()}}
 ##' @examples
 ##' c <- c("<K.1", "k.8", "2.5", "_4.3", "6.4", "12.9+", "9.2", "10.1", ">12.9")
 ##' cleanNumbers(c)
@@ -39,40 +39,6 @@ cleanNumbers <- function(c) {
     retval
 }
 
-
-##' @title Remove or Replace non-numeric characters.
-##'
-##' @description
-##' \code{swapc()} replaces non-numeric characters with numeric.
-##'
-##' @details
-##' \code{swapc()} replaces one character in a string with another in
-##' anticipation of converting to numeric. One use-case is to replace
-##' "K" with "0" in grade-equivalent test scores.
-##' These sometimes occur in otherwise numeric standardized test scores.
-##' Report the number of such characters replaced. Characters to be replaced
-##' are specified by regular expression (re).
-##'
-##' @param c A character vector of potentially numeric values.
-##' @param re A regular expression specifying which characters to operate on. For best effect,
-##' re should begin with "[" and end with "]" to specify a character set. At some point, I'll add
-##' a check to enforce this.
-##' @param repl A single character to be used as a replacement.
-##' @export
-##' @rdname scrubc
-##' @seealso
-##' \code{\link{stringr::str_replace_all()}}
-##' @examples
-##' c = c("<K.1", "K.8", "1.6", "2.1", "3.0", ">12.9")
-##' swapc(c)
-##'
-swapc <- function(c, re="[Kk]", repl="0" ) {
-    ## I'm assuming there will be no more than 1 per entry
-    count <- sum(stringr::str_count(c, re), na.rm=TRUE)
-    if(count)
-        cat(crayon::green(paste0("Replacing ", count, " characters from ", re,  " with '", repl, "'.\n")))
-    stringr::str_replace_all(c, re, repl)
-}
 
 
 ##' @description
@@ -95,8 +61,8 @@ swapc <- function(c, re="[Kk]", repl="0" ) {
 ##' @export
 ##' @rdname scrubc
 ##' @seealso
-##' \code{\link{stringr::str_remove_all()}}
-##' \code{\link{cleanNumbers()}}
+##' \code{\link[=stringr]{str_remove_all}}
+##' \code{\link{cleanNumbers}}
 ##' @examples
 ##' c <- c("0.1", "_0.8", "1.6", "2.1`", "+3. 0", "12.9")
 ##' scrubc(c)
@@ -113,3 +79,38 @@ scrubc <- function(c, re="[^-.0-9]") {
     if(count) cat(crayon::blue(paste0("Removing ", count, " characters from ", removed, "\n")))
     stringr::str_remove_all(c, re)
 }
+
+##' @title Remove or Replace non-numeric characters.
+##'
+##' @description
+##' \code{swapc()} replaces non-numeric characters with numeric.
+##'
+##' @details
+##' \code{swapc()} replaces one character in a string with another in
+##' anticipation of converting to numeric. One use-case is to replace
+##' "K" with "0" in grade-equivalent test scores.
+##' These sometimes occur in otherwise numeric standardized test scores.
+##' Report the number of such characters replaced. Characters to be replaced
+##' are specified by regular expression (re).
+##'
+##' @param c A character vector of potentially numeric values.
+##' @param re A regular expression specifying which characters to operate on. For best effect,
+##' re should begin with "[" and end with "]" to specify a character set. At some point, I'll add
+##' a check to enforce this.
+##' @param repl A single character to be used as a replacement.
+##' @export
+##' @rdname scrubc
+##' @seealso
+##' \code{\link[=stringr]{str_replace_all}}
+##' @examples
+##' c = c("<K.1", "K.8", "1.6", "2.1", "3.0", ">12.9")
+##' swapc(c)
+##'
+swapc <- function(c, re="[Kk]", repl="0" ) {
+    ## I'm assuming there will be no more than 1 per entry
+    count <- sum(stringr::str_count(c, re), na.rm=TRUE)
+    if(count)
+        cat(crayon::green(paste0("Replacing ", count, " characters from ", re,  " with '", repl, "'.\n")))
+    stringr::str_replace_all(c, re, repl)
+}
+

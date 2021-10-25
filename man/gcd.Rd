@@ -10,13 +10,13 @@ gcd(v)
 \item{v}{A vector of whole numbers}
 }
 \value{
-gcd() returns the greatest common divisor of the numbers in v.
+Returns a numeric value corresponding to the greatest common divisor of the numbers in v.
 }
 \description{
-gcd() takes a vector of whole numbers and returns their greatest common divisor as a numeric vector of length 1.
+\code{gcd()} takes a vector of whole numbers and returns their greatest common divisor as a numeric vector of length 1.
 }
 \details{
-gcd() takes a vector, v, of whole numbers as argument and returns their greatest common
+\code{gcd()} takes a vector, v, of whole numbers as argument and returns their greatest common
     divisor. Throws an error if any number in v is not a whole number (to within \code{.Machine$double.eps^0.5}).
 }
 \examples{

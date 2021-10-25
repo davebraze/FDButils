@@ -73,7 +73,7 @@ test scores." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">FDButils</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.10</span>
       </span>
     </div>
 
@@ -140,17 +140,16 @@ test scores. Several characters are handled specially. These four characters "&l
 are simply removed. The letter "K" is <em><strong>replaced</strong></em> with "0" (zero). All other non-numeric
 characters are removed. A count of each type of character removed or replaced is
 printed to the console.</p>
-<p><code>cleanNumbers()</code> calls helper functions <code><a href='swapc.html'>scrubc()</a></code> and <code><a href='swapc.html'>swapc()</a></code>
-to do its work.</p>
-<p>Advantages over <code><a href='https://readr.tidyverse.org/reference/parse_number.html'>readr::parse_number()</a></code> are that it provides
+<p><code>cleanNumbers()</code> calls helper functions <code><a href='scrubc.html'>scrubc()</a></code> and
+<code><a href='scrubc.html'>swapc()</a></code> to do its work.</p>
+<p>Advantages over <code><a href='https://readr.tidyverse.org/reference/parse_number.html'>parse_number</a></code> are that it provides
 explicit alerts as to what characters are being removed or replaced and
 in what quantity. Useful in cases where you are working with unfamiliar
 data (e.g., client data, or found data).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://readr.tidyverse.org/reference/parse_number.html'>readr::parse_number()</a></code>
-<code><a href='swapc.html'>scrubc()</a></code>
-<code><a href='swapc.html'>swapc()</a></code></p></div>
+    <div class='dont-index'><p><code><a href='https://readr.tidyverse.org/reference/parse_number.html'>parse_number</a></code>
+<code><a href='scrubc.html'>scrubc()</a></code></p></div>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Dave Braze <a href='mailto:davebraze@gmail.com'>davebraze@gmail.com</a></p>

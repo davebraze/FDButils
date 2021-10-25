@@ -9,7 +9,7 @@
 ##' Currently it works on on MS Windows only. Does nothing but issues a
 ##' warning on other platforms.
 ##'
-##' @return
+##' @return TRUE if successful, FALSE otherwise.
 ##' @author Dave Braze \email{davebraze@@gmail.com}
 ##' @export
 ##' @examples
@@ -17,9 +17,11 @@
 openwd <- function () {
     info <- utils::sessionInfo()
     if (grepl('win', info$running, ignore.case = TRUE)) {
-    suppressWarnings(shell(paste("explorer", gsub("/", "\\\\",
-                                                  getwd()))))
+        suppressWarnings(shell(paste("explorer", gsub("/", "\\\\",
+                                                      getwd()))))
+        invisible(TRUE)
     } else {
-        stop("Only MS Windows is currently supported.")
+        cat("Only MS Windows is currently supported.\n")
+        invisible(FALSE)
     }
 }
