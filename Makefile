@@ -32,7 +32,7 @@ help:
 	@echo --
 	@echo 
 
-.phoney: help build checkbuilt check pkgdown document manual versiontab install.gh install.local
+.phoney: help build checkbuilt check pkgdown document manual versiontag install.gh install.local
 ## Few targets correspond to files, so, list them here to ensure they always run.
 
 ##### Targets to build and check package.
@@ -49,6 +49,27 @@ checkbuilt:
 check:
 ## Build and check the package. Does not save built package. 
 	R $(R.OPTS) "devtools::check(pkg='.')"
+
+##### install or uninstall package
+
+uninstall: 
+## uninstall package from locations identified in .libPath(). Does not unload.
+	R $(R.OPTS) "devtools::uninstall(pkg='.')"
+
+install.src:
+## install package from source using devtools_install().
+	R $(R.OPTS) "devtools::install(pkg='.')"
+
+install.gh:
+## Install most recent release available on github using remotes::install_github().
+## TODO: FIXME! Does not work, presently
+	R $(R.OPTS) "remotes::install_github(repo='davebraze/$(PKG.NAME)')"
+
+install.loc:
+## Install current version from a local tarball using remotes::install_local().
+## Looks to the parent of the package source directory to find the tarball.
+## TODO: 1st check existence of the tarball; build it if necessary (make build).
+	R $(R.OPTS) "remotes::install_local(path=here::here('..', '$(BUILT.PKG)'))"
 
 ##### targets to build documentation in various formats, mostly in order to check it's ok before release
 
@@ -68,19 +89,6 @@ manual: document
 ##### Prepare for release of new version
 
 versiontag:
-## Set a version tag and push it to remote. 
+## Set a version tag with git and push it to remote. Manually edit DESCRIPTION to set version. 
 	git tag -a v$(PKG.VERS) -m "new release version v$(PKG.VERS)"
 	git push --tags
-
-##### Targets to install package 
-
-install.gh:
-## Install most recent version available on github.
-## TODO: FIXME! Does not work, presently
-	R $(R.OPTS) "remotes::install_github(repo='davebraze/$(PKG.NAME)')"
-
-install.local:
-## Install current version from a local tarball, if available.
-## Looks to the parent of the package source directory to find the tarball.
-## TODO: 1st check existence of the tarball; build it if necessary (make build).
-	R $(R.OPTS) "remotes::install_local(path=here::here('..', '$(BUILT.PKG)'))"
