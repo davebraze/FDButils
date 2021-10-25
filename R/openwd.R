@@ -10,7 +10,7 @@
 ##' @examples
 ##' openwd()
 openwd <- function () {
-    info <- sessionInfo()
+    info <- utils::sessionInfo()
     if (grepl('win', info$running, ignore.case = TRUE)) {
     suppressWarnings(shell(paste("explorer", gsub("/", "\\\\",
                                                   getwd()))))
