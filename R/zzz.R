@@ -16,7 +16,7 @@
     ## title = paste(meta$Package, meta$Title, sep=": "),
     ## note = paste("R package version", packageVersion("FDButils")),
 
-    packageStartupMessage("    (c) 2014-2021, Dave Braze and others.")
+    packageStartupMessage("    (c) 2014-2022, Dave Braze and others.")
     packageStartupMessage("    Released under the MIT license.\n")
 
     ## maybe call citation("FDButils")
