@@ -63,13 +63,13 @@ install.src:
 install.gh:
 ## Install most recent release available on github using remotes::install_github().
 ## TODO: FIXME! Does not work, presently
-	R $(R.OPTS) "remotes::install_github(repo='davebraze/$(PKG.NAME)')"
+	R $(R.OPTS) "remotes::install_github(repo='davebraze/$(PKG.NAME)', lib=.libPaths()[1])"
 
 install.loc:
 ## Install current version from a local tarball using remotes::install_local().
 ## Looks to the parent of the package source directory to find the tarball.
 ## TODO: 1st check existence of the tarball; build it if necessary (make build).
-	R $(R.OPTS) "remotes::install_local(path=here::here('..', '$(BUILT.PKG)'))"
+	R $(R.OPTS) "remotes::install_local(path=here::here('..', '$(BUILT.PKG)'), lib=.libPaths()[1])"
 
 ##### targets to build documentation in various formats, mostly in order to check it's ok before release
 
